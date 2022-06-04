@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 
 import styled from "styled-components";
@@ -16,9 +16,9 @@ function App() {
     <Router>
       <PageLayout>
         <Navbar />
-        <Route>
-          <LandingPage />
-        </Route>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+        </Routes>
       </PageLayout>
     </Router>
   );
