@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 
 import styled from "styled-components";
 import Navbar from "./components/Navbar";
+import BountyPage from "./pages/BountyPage";
+import abi from "./Borantia.json";
+import { ethers } from "ethers";
+import { SiweMessage } from "siwe";
+import ProfilePage from "./pages/ProfilePage";
+import LeaderboardPage from "./pages/LeaderboardPage";
+
+export const CONTRACT_ADDRESS = "0x0685818CB5f016f4f0aa231c0D04f60bcd6499aa";
 
 const PageLayout = styled.div`
   height: 100%;
@@ -12,12 +20,63 @@ const PageLayout = styled.div`
 `;
 
 function App() {
+  const [account, setAccount] = useState("");
+
+  const connectWallet = async () => {
+    try {
+      const { ethereum } = window as any;
+
+      if (!ethereum) {
+        alert("Get MetaMask!");
+        return;
+      }
+
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
+      setAccount(accounts[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const register = async () => {
+    try {
+      const { ethereum } = window as any;
+
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(CONTRACT_ADDRESS, abi.abi, signer);
+        const sampleMetadata = {
+          title: "Sample Borantia",
+          organization: "Sample Borantia Organization",
+          description: "Sample Description",
+          imageUrl: "Sample Image",
+          eventDate: 2309840239,
+        };
+        await contract.registerBorantia(
+          "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+          sampleMetadata
+        );
+      } else {
+        console.log("Ethereum object doesn't exist!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Router>
       <PageLayout>
-        <Navbar />
+        <Navbar onClick={connectWallet} account={account} />
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/:bounty" element={<BountyPage account={account} />} />
         </Routes>
       </PageLayout>
     </Router>
