@@ -71,7 +71,7 @@ const LandingPage = () => {
       {!se && (
         <CardWrapper>
           <ThingCard
-            text="Deliver 20 meals to seniors & homebound clients"
+            text="Develop an education curriculum for conservation"
             imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
             org="Aquari"
             onClick={() => {
@@ -80,7 +80,7 @@ const LandingPage = () => {
             offline
           />
           <ThingCard
-            text="Sort food in our warehouse"
+            text="Attend a beach cleanup at Ocean Beach, San Francisco"
             imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
             org="Aquari"
             onClick={() => {
@@ -88,7 +88,7 @@ const LandingPage = () => {
             }}
           />
           <ThingCard
-            text="Host booth for San Francisco Fair Day"
+            text="Organize an ocean conservation hackathon"
             imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
             org="Aquari"
             onClick={() => {
@@ -96,16 +96,7 @@ const LandingPage = () => {
             }}
           />
           <ThingCard
-            text="Organize a virtual food drive"
-            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
-            org="Aquari"
-            onClick={() => {
-              navigate("delivers");
-            }}
-            offline
-          />
-          <ThingCard
-            text="Cry for like 5 seconds"
+            text="Volunteer at the Climate Change March in Chicago"
             imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
             org="Aquari"
             onClick={() => {
@@ -114,7 +105,7 @@ const LandingPage = () => {
             offline
           />
           <ThingCard
-            text="Win a food hackathon"
+            text="Win a web3 hackathon"
             imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
             org="Aquari"
             onClick={() => {

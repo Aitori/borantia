@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 64px;
-  padding-bottom: 128px;
+  padding-bottom: 528px;
 `;
 
 const SS = styled.div`
@@ -200,22 +200,21 @@ const BountyPage = ({ account, volunteered }: Props) => {
           </Headline>
           <BigText>
             <p>
-              Help us sort and box the fresh produce and healthy groceries we
-              provide to neighbors in our community.
-              <br /> <br /> Shifts are available at our Cypress Center and
-              Brennan warehouses in San Jose. <br /> <br /> The primary
-              responsibility of a Food Sort Volunteer is to prepare food for
-              distribution by verifying, sorting, labeling, and repacking food
-              items at our distribution center Cypress Center in North San Jose.
-              <br /> <br /> Sorting opportunities run two to three hours and are
-              generally two to four times per month in the evenings and on
-              Saturday mornings.
-              <br /> <br />
-              Unfortunately, we do not offer food sort volunteer opportunities
-              at our Curtner location. <br /> <br /> Training is provided at the
-              beginning of each shift. To participate in this volunteer
-              activity, you must be fully vaccinated or have proof of a negative
-              COVID-19 test.
+              The vast majority of marine pollution comes from rivers so we are
+              focused on the rivers that require immediate relief. Garbage
+              accumulates on the beaches so if we stop the pollution from
+              entering the oceans by cleaning up rivers, we can then stop the
+              marine pollution from spreading.
+              <br />
+              <br /> Though we do river clean-ups globally, our efforts are
+              heavily focused on India because the river pollution is especially
+              concentrated there.
+              <br />
+              <br /> To complete this bounty, you must show up to the local
+              river and pick up some trash. This is some test copy showing what
+              the actual bounty text would look like, but don’t you want some
+              nice volunteer hours in exchange for continuing the fight for
+              ocean preservation?
             </p>
           </BigText>
         </SSS>
@@ -231,7 +230,7 @@ const BountyPage = ({ account, volunteered }: Props) => {
             <div>you'll get </div>
             <Bora>4 $BORA</Bora>
           </Reward>
-          <Volun style={{marginTop: "8px"}}>
+          <Volun style={{ marginTop: "8px" }}>
             <PPI src="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png" />{" "}
             Aquari
           </Volun>

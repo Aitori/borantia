@@ -110,9 +110,9 @@ const LeaderboardPage = () => {
           src="https://avatars.githubusercontent.com/u/22779056?s=120&v=4"
           alt=""
         />
-        <N1>luiso.eth</N1>
-        <H24>47</H24>
-        <H25>232</H25>
+        <N1>mkwan.eth</N1>
+        <H24>22</H24>
+        <H25>123</H25>
       </BB>
       <BB>
         <E1>🥉</E1>
@@ -121,9 +121,9 @@ const LeaderboardPage = () => {
           src="https://avatars.githubusercontent.com/u/22779056?s=120&v=4"
           alt=""
         />
-        <N1>luiso.eth</N1>
-        <H24>47</H24>
-        <H25>232</H25>
+        <N1>zzz.eth</N1>
+        <H24>7</H24>
+        <H25>45</H25>
       </BB>
       <BB>
         <E1>4</E1>
@@ -132,9 +132,9 @@ const LeaderboardPage = () => {
           src="https://avatars.githubusercontent.com/u/22779056?s=120&v=4"
           alt=""
         />
-        <N1>luiso.eth</N1>
-        <H24>47</H24>
-        <H25>232</H25>
+        <N1>graph.eth</N1>
+        <H24>5</H24>
+        <H25>30</H25>
       </BB>
       <BB>
         <E1>5</E1>
@@ -143,9 +143,9 @@ const LeaderboardPage = () => {
           src="https://avatars.githubusercontent.com/u/22779056?s=120&v=4"
           alt=""
         />
-        <N1>luiso.eth</N1>
-        <H24>47</H24>
-        <H25>232</H25>
+        <N1>sky.eth</N1>
+        <H24>2</H24>
+        <H25>8</H25>
       </BB>
     </Wrapper>
   );

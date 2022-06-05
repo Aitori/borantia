@@ -11,7 +11,7 @@ import { SiweMessage } from "siwe";
 import ProfilePage from "./pages/ProfilePage";
 import LeaderboardPage from "./pages/LeaderboardPage";
 
-export const CONTRACT_ADDRESS = "0x0685818CB5f016f4f0aa231c0D04f60bcd6499aa";
+export const CONTRACT_ADDRESS = "0xBDcA837987CFFdeAfdE4732506fe11B1036342e9";
 
 const PageLayout = styled.div`
   height: 100%;
