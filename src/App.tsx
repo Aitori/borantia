@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 
@@ -6,8 +6,8 @@ import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import BountyPage from "./pages/BountyPage";
 // import abi from "./Borantia.json";
-// import { ethers } from "ethers";
-// import { SiweMessage } from "siwe";
+import { ethers } from "ethers";
+import { SiweMessage } from "siwe";
 import ProfilePage from "./pages/ProfilePage";
 import LeaderboardPage from "./pages/LeaderboardPage";
 
@@ -22,6 +22,23 @@ const PageLayout = styled.div`
 function App() {
   const [account, setAccount] = useState("");
 
+  useEffect(() => {
+    const connectWalletOnPageLoad = async () => {
+      if (localStorage?.getItem("isWalletConnected") === "true") {
+        try {
+          const { ethereum } = window as any;
+          const accounts = await ethereum.request({
+            method: "eth_requestAccounts",
+          });
+          setAccount(accounts[0]);
+        } catch (ex) {
+          console.log(ex);
+        }
+      }
+    };
+    connectWalletOnPageLoad();
+  }, []);
+
   const connectWallet = async () => {
     try {
       const { ethereum } = window as any;
@@ -34,12 +51,32 @@ function App() {
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
-
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
+      const message = createSiweMessage(
+        await signer.getAddress(),
+        "Sign in with Ethereum to the app."
+      );
+      console.log(await signer.signMessage(message));
       setAccount(accounts[0]);
+      try {
+        localStorage.setItem("isWalletConnected", "true");
+      } catch (error) {
+        console.log(error);
+      }
     } catch (error) {
       console.log(error);
     }
   };
+
+  function createSiweMessage(address: string, statement: string) {
+    const message = new SiweMessage({
+      address,
+      statement,
+      uri: origin,
+    });
+    return message.prepareMessage();
+  }
 
   // const register = async () => {
   //   try {

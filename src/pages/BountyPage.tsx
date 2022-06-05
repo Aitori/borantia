@@ -21,6 +21,7 @@ const SS = styled.div`
 const SSS = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Headline = styled.div`
@@ -28,19 +29,17 @@ const Headline = styled.div`
   background: #18151e;
   border-radius: 15px;
   align-items: center;
-  width: 80%;
+  width: fit-content;
   padding: 16px 24px;
   margin: 0 0 32px 0;
-`;
-const Logo = styled.img`
-  width: 20%;
-  margin: 0 32px 0 0;
+  align-self: flex-start;
 `;
 const Logotxt = styled.div`
   font-weight: 600;
   font-size: 23px;
   line-height: 28px;
   color: #fafafa;
+  width: fit-content;
 `;
 
 const BigText = styled.div`
@@ -60,10 +59,11 @@ const Reward = styled.div`
   font-size: 23px;
   line-height: 28px;
   text-align: center;
-
+  width: 100%;
   color: rgba(250, 250, 250, 0.5);
-  padding: 16px 16px;
+  padding: 8px 16px;
   align-items: center;
+  margin-top: 20px;
 `;
 
 const Bora = styled.div`
@@ -196,11 +196,9 @@ const BountyPage = ({ account, volunteered }: Props) => {
       <SS>
         <SSS style={{ width: "65%", marginRight: "48px" }}>
           <Headline>
-            <Logo src="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png" />
-            <Logotxt>Second Harvest</Logotxt>
+            <Logotxt>Ocean Beach Cleanup</Logotxt>
           </Headline>
           <BigText>
-            <h2>Headline</h2>
             <p>
               Help us sort and box the fresh produce and healthy groceries we
               provide to neighbors in our community.
@@ -222,17 +220,21 @@ const BountyPage = ({ account, volunteered }: Props) => {
           </BigText>
         </SSS>
         <SSS style={{ width: "35%" }}>
+          {volunteered || addUser || location.pathname === "/delivers" ? (
+            <BoraButton onClick={() => claim()}>Claim</BoraButton>
+          ) : (
+            <BoraButton onClick={() => addVolunteer(1, account)}>
+              Volunteer
+            </BoraButton>
+          )}
           <Reward>
-            <div>reward. </div>
+            <div>you'll get </div>
             <Bora>4 $BORA</Bora>
-            {volunteered || addUser || location.pathname === "/delivers" ? (
-              <BoraButton onClick={() => claim()}>Claim</BoraButton>
-            ) : (
-              <BoraButton onClick={() => addVolunteer(1, account)}>
-                Volunteer
-              </BoraButton>
-            )}
           </Reward>
+          <Volun style={{marginTop: "8px"}}>
+            <PPI src="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png" />{" "}
+            Aquari
+          </Volun>
           <VolunteerTexst>
             Volunteers<Countt>3/4 slots remaining</Countt>
           </VolunteerTexst>

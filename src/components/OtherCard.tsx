@@ -39,6 +39,7 @@ interface ThingCardProps {
 
 const Orgimg = styled.img`
   width: 40%;
+  margin-right: 16px;
 `;
 
 const Bubble = styled.div`

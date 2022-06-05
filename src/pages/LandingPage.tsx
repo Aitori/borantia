@@ -72,45 +72,62 @@ const LandingPage = () => {
         <CardWrapper>
           <ThingCard
             text="Deliver 20 meals to seniors & homebound clients"
-            imageUrl="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png"
-            org="Second Harvest"
-            onClick={()=>{navigate("deliver")}}
+            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
+            org="Aquari"
+            onClick={() => {
+              navigate("deliver");
+            }}
+            offline
           />
           <ThingCard
             text="Sort food in our warehouse"
-            imageUrl="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png"
-            org="Second Harvest"
-            onClick={()=>{navigate("delivers")}}
+            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
+            org="Aquari"
+            onClick={() => {
+              navigate("delivers");
+            }}
           />
           <ThingCard
             text="Host booth for San Francisco Fair Day"
-            imageUrl="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png"
-            org="Second Harvest"
-            onClick={()=>{navigate("delivers")}}
+            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
+            org="Aquari"
+            onClick={() => {
+              navigate("delivers");
+            }}
           />
           <ThingCard
             text="Organize a virtual food drive"
-            imageUrl="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png"
-            org="Second Harvest"
-            onClick={()=>{navigate("delivers")}}
+            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
+            org="Aquari"
+            onClick={() => {
+              navigate("delivers");
+            }}
+            offline
           />
           <ThingCard
             text="Cry for like 5 seconds"
-            imageUrl="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png"
-            org="Second Harvest"
-            onClick={()=>{navigate("delivers")}}
+            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
+            org="Aquari"
+            onClick={() => {
+              navigate("delivers");
+            }}
+            offline
           />
           <ThingCard
             text="Win a food hackathon"
-            imageUrl="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png"
-            org="Second Harvest"
-            onClick={()=>{navigate("delivers")}}
+            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
+            org="Aquari"
+            onClick={() => {
+              navigate("delivers");
+            }}
           />
           <ThingCard
             text="Run a marathon"
-            imageUrl="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png"
-            org="Second Harvest"
-            onClick={()=>{navigate("delivers")}}
+            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
+            org="Aquari"
+            onClick={() => {
+              navigate("delivers");
+            }}
           />
         </CardWrapper>
       )}
@@ -118,8 +135,8 @@ const LandingPage = () => {
         <CardWrapper>
           <OtherCard
             location="San Francisco, CA"
-            imageUrl="https://www.shfb.org/wp-content/uploads/2019/07/SHFB_Primary_Logo_RGB@2x-8.png"
-            org="Second Harvest"
+            imageUrl="https://s2.coinmarketcap.com/static/img/coins/200x200/9921.png"
+            org="Aquari"
             desc="Food and nutrition for those in need"
             num={6}
           />

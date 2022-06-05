@@ -37,6 +37,7 @@ interface ThingCardProps {
   org: string;
   imageUrl: string;
   onClick: () => void;
+  offline?: boolean;
 }
 
 const Orgimg = styled.img`
@@ -50,15 +51,28 @@ const Orgtxt = styled.div`
   text-align: center;
 
   color: #fafafa;
+  margin-left: 16px;
 `;
-const ThingCard = ({ text, org, imageUrl, onClick }: ThingCardProps) => {
+const ThingCard = ({
+  text,
+  org,
+  imageUrl,
+  onClick,
+  offline,
+}: ThingCardProps) => {
   return (
     <Wrapper onClick={() => onClick()}>
       <Text>{text}</Text>
-      <Org>
-        <Orgimg src={imageUrl} alt="" />
-        <Orgtxt>{org}</Orgtxt>
-      </Org>
+      <div style={{ display: "flex" }}>
+        <Org>
+          <Orgimg src={imageUrl} alt="" />
+          <Orgtxt>{org}</Orgtxt>
+        </Org>
+        <Org>
+          {offline ? "💻" : "📌"}
+          <Orgtxt>{offline ? "offline" : "online"}</Orgtxt>
+        </Org>
+      </div>
     </Wrapper>
   );
 };
