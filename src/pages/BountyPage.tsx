@@ -156,7 +156,7 @@ const BountyPage = ({ account, volunteered }: Props) => {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(CONTRACT_ADDRESS, abi.abi, signer);
-        const tt = await contract.claimBorantia(
+        await contract.claimBorantia(
           3,
           "0xaA387bcAFc8d9030D71dc072F0dF264782b8988B",
           69

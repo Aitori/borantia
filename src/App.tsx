@@ -5,9 +5,9 @@ import LandingPage from "./pages/LandingPage";
 import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import BountyPage from "./pages/BountyPage";
-import abi from "./Borantia.json";
-import { ethers } from "ethers";
-import { SiweMessage } from "siwe";
+// import abi from "./Borantia.json";
+// import { ethers } from "ethers";
+// import { SiweMessage } from "siwe";
 import ProfilePage from "./pages/ProfilePage";
 import LeaderboardPage from "./pages/LeaderboardPage";
 
@@ -41,32 +41,32 @@ function App() {
     }
   };
 
-  const register = async () => {
-    try {
-      const { ethereum } = window as any;
+  // const register = async () => {
+  //   try {
+  //     const { ethereum } = window as any;
 
-      if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, abi.abi, signer);
-        const sampleMetadata = {
-          title: "Sample Borantia",
-          organization: "Sample Borantia Organization",
-          description: "Sample Description",
-          imageUrl: "Sample Image",
-          eventDate: 2309840239,
-        };
-        await contract.registerBorantia(
-          "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
-          sampleMetadata
-        );
-      } else {
-        console.log("Ethereum object doesn't exist!");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     if (ethereum) {
+  //       const provider = new ethers.providers.Web3Provider(ethereum);
+  //       const signer = provider.getSigner();
+  //       const contract = new ethers.Contract(CONTRACT_ADDRESS, abi.abi, signer);
+  //       const sampleMetadata = {
+  //         title: "Sample Borantia",
+  //         organization: "Sample Borantia Organization",
+  //         description: "Sample Description",
+  //         imageUrl: "Sample Image",
+  //         eventDate: 2309840239,
+  //       };
+  //       await contract.registerBorantia(
+  //         "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+  //         sampleMetadata
+  //       );
+  //     } else {
+  //       console.log("Ethereum object doesn't exist!");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <Router>
